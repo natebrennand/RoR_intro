@@ -8,7 +8,7 @@ DUE: by April 7th 11:59pm (night before our third class)
 
 * User
 * Course
-* Class
+* Lecture
 * Assignment
 * Upload
 
@@ -16,4 +16,4 @@ DUE: by April 7th 11:59pm (night before our third class)
 
 4) Use the rails console to create some objects and their associated objects.
 
-__Bonus__: create a polymorphic association between users and courses
+__Bonus__: create a polymorphic association between lectures and uploads
