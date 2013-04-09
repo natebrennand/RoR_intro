@@ -1,16 +1,10 @@
 Lab2::Application.routes.draw do
+
   resources :courses
-
-
-  resources :uploads
-
-
   resources :assignments
-
-
-  resources :lectures
-
-
+  resources :lectures do
+    resources :uploads
+  end
   resources :users
 
 
