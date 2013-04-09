@@ -1,5 +1,8 @@
 Lab2::Application.routes.draw do
 
+  resources :lectures
+
+
   resources :courses
 
 
