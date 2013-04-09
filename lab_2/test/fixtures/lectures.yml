@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  class_time: 
+  subject: 
+  attendance: 
+
+two:
+  class_time: 
+  subject: 
+  attendance: 
