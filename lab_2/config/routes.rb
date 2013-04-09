@@ -1,4 +1,7 @@
 Lab2::Application.routes.draw do
+  resources :courses
+
+
   resources :uploads
 
 
