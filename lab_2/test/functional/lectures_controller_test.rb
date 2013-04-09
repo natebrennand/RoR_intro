@@ -18,7 +18,7 @@ class LecturesControllerTest < ActionController::TestCase
 
   test "should create lecture" do
     assert_difference('Lecture.count') do
-      post :create, lecture: {  }
+      post :create, lecture: { attendance: @lecture.attendance, belongs_to: @lecture.belongs_to, class_time: @lecture.class_time, embeds_many: @lecture.embeds_many, subject: @lecture.subject }
     end
 
     assert_redirected_to lecture_path(assigns(:lecture))
@@ -35,7 +35,7 @@ class LecturesControllerTest < ActionController::TestCase
   end
 
   test "should update lecture" do
-    put :update, id: @lecture, lecture: {  }
+    put :update, id: @lecture, lecture: { attendance: @lecture.attendance, belongs_to: @lecture.belongs_to, class_time: @lecture.class_time, embeds_many: @lecture.embeds_many, subject: @lecture.subject }
     assert_redirected_to lecture_path(assigns(:lecture))
   end
 

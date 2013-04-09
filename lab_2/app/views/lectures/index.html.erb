@@ -2,6 +2,11 @@
 
 <table>
   <tr>
+    <th>Class time</th>
+    <th>Subject</th>
+    <th>Attendance</th>
+    <th>Belongs to</th>
+    <th>Embeds many</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +14,11 @@
 
 <% @lectures.each do |lecture| %>
   <tr>
+    <td><%= lecture.class_time %></td>
+    <td><%= lecture.subject %></td>
+    <td><%= lecture.attendance %></td>
+    <td><%= lecture.belongs_to %></td>
+    <td><%= lecture.embeds_many %></td>
     <td><%= link_to 'Show', lecture %></td>
     <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
     <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>

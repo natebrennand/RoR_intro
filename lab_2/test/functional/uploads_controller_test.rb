@@ -18,7 +18,7 @@ class UploadsControllerTest < ActionController::TestCase
 
   test "should create upload" do
     assert_difference('Upload.count') do
-      post :create, upload: {  }
+      post :create, upload: { embedded_in: @upload.embedded_in, title: @upload.title, upload_time: @upload.upload_time, url: @upload.url }
     end
 
     assert_redirected_to upload_path(assigns(:upload))
@@ -35,7 +35,7 @@ class UploadsControllerTest < ActionController::TestCase
   end
 
   test "should update upload" do
-    put :update, id: @upload, upload: {  }
+    put :update, id: @upload, upload: { embedded_in: @upload.embedded_in, title: @upload.title, upload_time: @upload.upload_time, url: @upload.url }
     assert_redirected_to upload_path(assigns(:upload))
   end
 

@@ -2,11 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# gem 'moped', '1.4.5'
-# gem 'origin', '1.0.11'
-gem 'mongoid', '3.1.2'
-
-
+gem 'mongoid'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -40,4 +36,4 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
