@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
 
+  skip_before_filter :require_student, :only =>[:new, :create]
+
   def new
   end
 
   def create
-    student = Student.find_by(uni: params[:uni])
+    student = Student.find_by(:uni => params[:uni])
     if student
       session[:user_id] = student.uni
       flash[:notice] = "Logged in"
@@ -16,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil
     flash[:notice] = "Logged out"
     redirect_to root_url
   end

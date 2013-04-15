@@ -7,8 +7,6 @@ Courzilla::Application.routes.draw do
   match "login" => "sessions#new", :as => "login"
   match "logout" => "sessions#destroy", :as => "logout"
 
-
-
   resources :assignments
   resources :uploads
   resources :lectures

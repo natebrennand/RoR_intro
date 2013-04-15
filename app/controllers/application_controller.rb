@@ -3,19 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :require_student
 
+private
 
   def current_student
-    if @current_student.nil?
-      @current_student = Student.find(session[:user_id]) if session[:student]
-    end
+    @current_student = Student.find_by(:uni => session[:user_id]) if session[:user_id]
   end
   helper_method :current_student
 
   def require_student
-    if current_student
-      return true
-    else
-      return false
+    if current_student == nil
+      redirect_to login_path
     end
   end
 
