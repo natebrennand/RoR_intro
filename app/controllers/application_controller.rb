@@ -1,23 +1,23 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
 
-  def find
-  	@user = User.new
+  protect_from_forgery
+  before_filter :require_student
+
+
+  def current_student
+    if @current_student.nil?
+      @current_student = Student.find(session[:user_id]) if session[:student]
+    end
+  end
+  helper_method :current_student
+
+  def require_student
+    if current_student
+      return true
+    else
+      return false
+    end
   end
 
-#  before_filter :require_user
-#
-#  def current_user
-#    if @current_user.nil?
-#      @current_user = User.find(session[:user_id]) if session[:user]
-#    end
-#  end
-#
-#  def require_user
-#  	if current_user
-#  		return true
-#  	end
-#  	redirect_to root_url
-#  end
 
 end

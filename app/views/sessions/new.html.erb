@@ -1,0 +1,17 @@
+
+<h2>Log In</h2>
+
+<%= form_tag sessions_path do %>
+
+  <div class="field">
+    <%= label_tag :uni %>
+    <br />
+    <%= text_field_tag :uni, params[:uni] %>
+  </div>
+
+  <div class="actions">
+    <br/>
+    <%= submit_tag "Log in" %>
+  </div>
+
+<% end %>

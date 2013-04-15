@@ -7,11 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:error] %>
+    <div id="error"><%= flash[:error] %></div>
+  <% end %>
+
   <div id="container">
-  	
-  	<div id="user_header">
-  	  <%= link_to "Sign up", new_student_path %>
-  	</div>
+
+    <div id="student_header">
+      <%= link_to "Home", root_path %>
+      | <%= link_to "Sign up", new_student_path %>
+      | <%= link_to "Log in", login_path %>
+      | <%= link_to "Log out", logout_path %>
+    </div>
 
   <%= yield %>
 

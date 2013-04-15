@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  skip_before_filter :require_student, :only =>[:new, :create]
+
   # GET /students
   # GET /students.json
   def index
@@ -41,17 +44,12 @@ class StudentsController < ApplicationController
   # POST /students.json
   def create
     @student = Student.new(params[:student])
-
-    respond_to do |format|
-      if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
-        format.json { render json: @student, status: :created, location: @student }
-        redirect_to root_url, notice: "Thanks for signing up"
-      else
-        format.html { render action: "new" }
-        format.json { render json: @student.errors, status: :unprocessable_entity }
-        render "new"
-      end
+    if @student.save
+      flash[:notice] =  "Thanks for signing up"
+      redirect_to root_url
+    else
+      flash[:error] = @student.errors
+      redirect_to new_student_path
     end
   end
 
