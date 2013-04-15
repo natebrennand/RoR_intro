@@ -46,9 +46,11 @@ class StudentsController < ApplicationController
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render json: @student, status: :created, location: @student }
+        redirect_to root_url, notice: "Thanks for signing up"
       else
         format.html { render action: "new" }
         format.json { render json: @student.errors, status: :unprocessable_entity }
+        render "new"
       end
     end
   end

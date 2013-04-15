@@ -2,18 +2,17 @@ Courzilla::Application.routes.draw do
 
   root :to => "home#index"
 
+  #match "new_student" => 'signup', :as => "signup"
+  match "signup" => "users#new", :as => "signup"
+  match "login" => "sessions#new", :as => "login"
+  match "logout" => "sessions#destroy", :as => "logout"
+
+
+
   resources :assignments
-
-
   resources :uploads
-
-
   resources :lectures
-
-
   resources :courses
-
-
   resources :students
 
 
