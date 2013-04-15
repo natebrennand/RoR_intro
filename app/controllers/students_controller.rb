@@ -80,4 +80,15 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def correct_student?
+    @user = Student.find(params[:uni]).student
+    unless current_student == @user
+      flash[:error] = "That's not a registered UNI, please sign up"
+      redirect_to new_student_path
+    end
+  end
+
+
+
 end

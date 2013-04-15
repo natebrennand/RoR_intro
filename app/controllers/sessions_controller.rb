@@ -4,17 +4,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    student = Student.find_by(uni => params[:uni])
+    student = Student.find_by(uni: params[:uni])
     if student
       session[:user_id] = student.uni
-      redirect_to root_url, notice => "Logged in"
+      flash[:notice] = "Logged in"
+      redirect_to root_url
     else
-      flash.now.alert = "Your UNI is invalid"
+      flash[:error] = "Your UNI is invalid"
       render "new"
     end  
   end
 
   def destroy
+    flash[:notice] = "Logged out"
     redirect_to root_url
   end
 
