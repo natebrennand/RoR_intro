@@ -14,24 +14,24 @@
 <body>
 
   <% if flash[:notice] %>
-    <h2>Notification:</h2>
+    <h4>Notification:</h4>
     <div id="notice"><%= flash[:notice] %><br /></div>
   <% end %>
 
   <% if flash[:error] %>
-    <h2>Error:</h2>
+    <h4>Error:</h4>
     <div id="error"><%= flash[:error] %><br /></div>
   <% end %>
 
   <div id="container">
 
-    <div id="student_header">
-      <% if current_student %>
-        <%= link_to "Home", root_path %>
-        | <%= link_to "Log out", logout_path %>
-        | Logged in as <%= current_student.uni %>
-      <% end %>
-    </div>
+     <% if current_student %>
+       <div class="btn btn-navbar">
+         <%= link_to "Home", root_path %>
+           | <%= link_to "Log out", logout_path %>
+           | Logged in as <%= current_student.uni %>
+       </div>
+     <% end %>
 
   <%= yield %>
   </div>
