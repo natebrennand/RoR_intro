@@ -4,7 +4,8 @@ Courzilla::Application.routes.draw do
 
   match "new_student" => 'signup', :as => "signup"
   match "signup" => "students#new", :as => "signup"
-  match "login" => "sessions#new", :as => "login"
+  match "login" => "sessions#new", :as => "login", :via => :get
+  match "login" => "sessions#create", :as => "login", :via => :post
   match "logout" => "sessions#destroy", :as => "logout"
 
   resources :assignments
@@ -12,7 +13,6 @@ Courzilla::Application.routes.draw do
   resources :lectures
   resources :courses
   resources :students
-  resources :sessions
 
 
   # The priority is based upon order of creation:
