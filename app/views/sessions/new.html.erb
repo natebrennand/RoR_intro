@@ -4,20 +4,15 @@
 <%= form_tag login_path do %>
 
   <div class="field">
-    <%= label_tag :uni %>
-    <br />
-    <%= text_field_tag :uni, params[:uni] %>
-  </div>
-
-  <div class="actions">
-    <br />
-    <%= submit_tag "Log in", :class => "btn btn-primary btn-large" %>
+    <%= text_field_tag :uni, params[:uni], :placeholder => 'Your UNI here'  %>
+    <%= submit_tag "Log In", :class => "btn btn-primary" %>
   </div>
 
 <% end %>
 
 <div>
-	<br/>
-  <%= link_to "Create a New User", signup_path %>
+  <p class="btn btn-info btn-small">
+    <%= link_to "Create a New User", signup_path %>
+  </p>
 </div>
 
