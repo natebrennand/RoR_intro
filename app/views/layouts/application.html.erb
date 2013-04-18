@@ -12,15 +12,20 @@
   </style>
 </head>
 <body>
+  <% if flash[:notice] or flash[:error] %>
+  <div class="alert">
+    <% if flash[:notice] %>
+      <div id="notice">
+        <%= flash[:notice] %><br />
+      </div>
+    <% end %>
 
-  <% if flash[:notice] %>
-    <h4>Notification:</h4>
-    <div id="notice"><%= flash[:notice] %><br /></div>
-  <% end %>
-
-  <% if flash[:error] %>
-    <h4>Error:</h4>
-    <div id="error"><%= flash[:error] %><br /></div>
+    <% if flash[:error] %>
+      <div id="error">
+        <%= flash[:error] %><br />
+      </div>
+    <% end %>
+  </div>
   <% end %>
 
   <div id="container">
