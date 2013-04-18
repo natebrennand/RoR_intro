@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @course.name %>
-</p>
-
-<p>
-  <b>Professor:</b>
-  <%= @course.professor %>
-</p>
+<table class="table table-bordered table-striped table-hover">
+  <tr>
+    <th>call_number</th>
+    <th>course_title</th>
+    <th>start_time</th>
+    <th>end_time</th>
+    <th>days</th>
+    <th>building</th>
+    <th>room</th>
+    <th>professor</th>
+  </tr>
+  <tr>
+    <td><%= @course.call_number %></td>
+    <td><%= @course.course_title %></td>
+    <td><%= @course.start_time %></td>
+    <td><%= @course.end_time %></td>
+    <td><%= @course.days %></td>
+    <td><%= @course.building %></td>
+    <td><%= @course.room %></td>
+    <td><%= @course.professor %></td>
+  </tr>
+</table>
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

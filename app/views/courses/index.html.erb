@@ -2,16 +2,25 @@
 
 <table class="table table-bordered table-striped table-hover">
   <tr>
-    <th>Name</th>
+    <th>Call Number</th>
+    <th>Title</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Days</th>
+    <th>Building</th>
+    <th>Room</th>
     <th>Professor</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%= course.name %></td>
+    <td><%= course.call_number %></td>
+    <td><%= course.course_title %></td>
+    <td><%= course.start_time %></td>
+    <td><%= course.end_time %></td>
+    <td><%= course.days %></td>
+    <td><%= course.building %></td>
+    <td><%= course.room %></td>
     <td><%= course.professor %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
