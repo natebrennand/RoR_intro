@@ -13,19 +13,19 @@
 </head>
 <body>
   <% if flash[:notice] or flash[:error] %>
-  <div class="alert">
+<!--  <div class="alert"> -->
     <% if flash[:notice] %>
-      <div id="notice">
+      <div class="alert alert-success">
         <%= flash[:notice] %><br />
       </div>
     <% end %>
 
     <% if flash[:error] %>
-      <div id="error">
+      <div class="alert alert-error">
         <%= flash[:error] %><br />
       </div>
     <% end %>
-  </div>
+<!--  </div> -->
   <% end %>
 
   <div id="container">
