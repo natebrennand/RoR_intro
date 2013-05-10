@@ -13,9 +13,10 @@
   <tr>
     <td><%= assignment.title %></td>
     <td><%= assignment.points %></td>
-    <td><%= link_to 'Show', assignment %></td>
-    <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
-    <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <td class="btn btn-info btn-small"><%= link_to 'Show', assignment %></td>
+    <td class="btn btn-warning btn-small"><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+    <td class="btn btn-danger btn-small"><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
