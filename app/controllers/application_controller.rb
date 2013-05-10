@@ -17,7 +17,7 @@ private
   end
 
   def require_admin
-    if current_student.role == nil or current_student == False
+    if current_student.role == nil or current_student.role == false
       redirect_to block_path
     end
   end
