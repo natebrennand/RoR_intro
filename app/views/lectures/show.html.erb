@@ -11,5 +11,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<% if current_student.role %>
+    <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<% end %>
 <%= link_to 'Back', lectures_path %>

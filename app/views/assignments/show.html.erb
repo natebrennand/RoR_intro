@@ -10,6 +10,7 @@
   <%= @assignment.points %>
 </p>
 
-
-<%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<% if current_student.role %>
+    <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
+<% end %>
 <%= link_to 'Back', assignments_path %>

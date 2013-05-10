@@ -23,6 +23,7 @@
   </tr>
 </table>
 
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<% if current_student.role %>
+    <%= link_to 'Edit', edit_course_path(@course) %> |
+<% end %>
 <%= link_to 'Back', courses_path %>
