@@ -1,4 +1,7 @@
 class UploadsController < ApplicationController
+
+  before_filter :require_admin, :except =>[:index, :show, :new]
+
   # GET /uploads
   # GET /uploads.json
   def index

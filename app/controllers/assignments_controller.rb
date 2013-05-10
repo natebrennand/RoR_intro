@@ -1,4 +1,7 @@
 class AssignmentsController < ApplicationController
+
+  before_filter :require_admin, :except =>[:index, :show]
+
   # GET /assignments
   # GET /assignments.json
   def index

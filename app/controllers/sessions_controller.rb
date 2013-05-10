@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  skip_before_filter :require_student, :only =>[:new, :create]
+  skip_before_filter :require_student
 
   def new
   end
@@ -14,7 +14,10 @@ class SessionsController < ApplicationController
     else
       flash[:error] = "Your UNI is invalid"
       render "new"
-    end  
+    end
+  end
+
+  def block
   end
 
   def destroy
@@ -22,6 +25,5 @@ class SessionsController < ApplicationController
     flash[:notice] = "Logged out"
     redirect_to login_path
   end
-
 
 end
