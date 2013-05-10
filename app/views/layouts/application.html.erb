@@ -1,44 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Courzilla</title>
-  <%= stylesheet_link_tag "bootstrap"  %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "slate", "style" %>
+
   <%= csrf_meta_tags %>
-  <style type="text/css">
-  body {
-      padding: 40px;
-  } 
-  </style>
 </head>
-<body>
-  <% if flash[:notice] or flash[:error] %>
-<!--  <div class="alert"> -->
-    <% if flash[:notice] %>
-      <div class="alert alert-success">
-        <%= flash[:notice] %><br />
+
+<body class="preview">
+  <div id="wrap">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <p class="brand"><%= link_to 'Courzilla', root_path %></p>  <!-- brand/home link -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+              <% if current_student %>
+                <li><%= link_to "Home", root_path %></li>
+                <li><%= link_to "Log out", logout_path %></li>
+                <li><a> Logged in as <%= current_student.uni %></a></li>
+              <% elsif %>
+                <li><%= link_to "Log In", login_path %></li>
+              <% end %>
+
+            </ul>  <!-- end menu items -->
+          </div> <!-- end nav-collapse -->
+        </div>  <!-- end container -->
+      </div> <!-- end inner nav bar -->
+    </div> <!-- end navbar-fixed-top-->
+
+    <div class="container">
+
+      <!-- Flash messages -->
+      <div class="page-header">
+        <% if flash[:notice] or flash[:error] %>
+          <% if flash[:notice] %>
+            <div class="alert alert-success">
+              <%= flash[:notice] %><br />
+            </div>
+          <% end %>
+
+          <% if flash[:error] %>
+            <div class="alert alert-error">
+              <%= flash[:error] %><br />
+            </div>
+          <% end %>
+        <% end %>
+      </div>  <!-- end header -->
+
+      <!-- Page Content -->
+      <div class="container">
+        <%= yield %>
       </div>
-    <% end %>
 
-    <% if flash[:error] %>
-      <div class="alert alert-error">
-        <%= flash[:error] %><br />
+      <div id="push"><!-- Creates a gap for a sticky footer -->
       </div>
-    <% end %>
-<!--  </div> -->
-  <% end %>
 
-  <div id="container">
-     <% if current_student %>
-       <div class="btn btn-navbar">
-         <%= link_to "Home", root_path %>
-           | <%= link_to "Log out", logout_path %>
-           | Logged in as <%= current_student.uni %>
-       </div>
-     <% end %>
+    </div>
 
-  <%= yield %>
+  </div>  <!-- end wrap -->
+
+  <div id="footer">
+    <div class="container">
+      <p class="muted credit">
+        Courzilla
+        | COMS3101 Project by Nate Brennand
+        | <a href="http://starlogs.net/#nsb2142/RoR_intro">Credits</a>
+      </p>
+    </div>
   </div>
-  
+
 </body>
+
 </html>
