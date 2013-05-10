@@ -6,6 +6,7 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 
 #### Required Features
 ---
+
 1.  Pull Request
     * Not completed
 2.  User Roles
@@ -20,6 +21,8 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 
 #### Option Features
 ---
-\# 8 Twitter Bootstrap
-    * Currently using a bootswatch variety, [slate](http://bootswatch.com/slate/).
+
+\#8 Twitter Bootstrap
+
+*  Currently using a bootswatch variety, [slate](http://bootswatch.com/slate/).
 
