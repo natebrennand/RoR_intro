@@ -10,6 +10,10 @@
   <%= @student.uni %>
 </p>
 
+<p>
+  <b>Email:</b>
+  <%= @student.email %>
+</p>
 
 <% if current_student.role %>
     <%= link_to 'Edit', edit_student_path(@student)  %> |
