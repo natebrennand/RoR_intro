@@ -1,13 +1,12 @@
 namespace :upload do
     desc 'uploads courses csv data'
-    task :course => :environment do 
+    task :course => :environment do
         require 'csv'
         attributes = ['call_number','course_title','start_time','end_time','days','building','room','professor']
         #puts attributes
         i = 0
         CSV.foreach(Rails.root+"courses.csv",{:headers=>true}) do |row|
-           puts '-------------------------------------------------------'
-            
+
             course = Course.new
 
             attributes.zip(row).each do |attribute, data|
@@ -15,7 +14,8 @@ namespace :upload do
                 #puts attribute
                 #puts data
             end
-            puts course.professor
+            course['_id'] = course['call_number']
+            puts course.course_title
             course.save
         end
     end

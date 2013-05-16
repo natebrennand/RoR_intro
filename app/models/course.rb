@@ -1,5 +1,6 @@
 class Course
   include Mongoid::Document
+
   field :call_number, type: Integer
   field :course_title
   field :start_time
@@ -10,4 +11,7 @@ class Course
   field :professor
   has_and_belongs_to_many :students
   has_many :lectures
+
+  field :_id, type: String, default: ->{ course_title }
+  validates_uniqueness_of :call_number
 end
