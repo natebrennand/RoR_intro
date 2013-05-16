@@ -9,9 +9,10 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 
 1.  Pull Request
     * I couldn't get access to sierrasoleil/RoRclass
-    * Will make pull request against my own repo
+    * [Made pull request against my own repo](https://github.com/nsb2142/RoR_intro/pull/1)
 2.  User Roles
     * Missing functionality
+    * Filter works
     * Cannot successfully add students to a class
 3.  Partials
     * Completed
