@@ -8,9 +8,11 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 ---
 
 1.  Pull Request
-    * Not completed
+    * I couldn't get access to sierrasoleil/RoRclass
+    * Will make pull request against my own repo
 2.  User Roles
-    * Not completed
+    * Missing functionality
+    * Cannot successfully add students to a class
 3.  Partials
     * Completed
     Notes:
@@ -25,4 +27,9 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 \#8 Twitter Bootstrap
 
 *  Currently using a bootswatch variety, [slate](http://bootswatch.com/slate/).
+
+\#10 Nice URLS
+
+* Student URLs use the uni
+* Course URLs use the call number
 
