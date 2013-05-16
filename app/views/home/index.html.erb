@@ -1,10 +1,41 @@
 
 <h1>Home</h1>
-<ul>
-<li class="btn btn-info btn-large"><a href='/students'>Students</a></li>
-<li class="btn btn-info btn-large"><a href='/courses'>Courses</a></li>
-<li class="btn btn-info btn-large"><a href='/lectures'>Lectures</a></li>
-<li class="btn btn-info btn-large"><a href='/uploads'>Uploads</a></li>
-<li class="btn btn-info btn-large"><a href='/assignments'>Assignments</a></li>
-</ul>
+<div class="container">
+  <ul>
+    <li class="btn btn-info btn-large"><a href='/students'>Students</a></li>
+    <li class="btn btn-info btn-large"><a href='/courses'>Courses</a></li>
+    <li class="btn btn-info btn-large"><a href='/lectures'>Lectures</a></li>
+    <li class="btn btn-info btn-large"><a href='/uploads'>Uploads</a></li>
+    <li class="btn btn-info btn-large"><a href='/assignments'>Assignments</a></li>
+  </ul>
+</div>
 
+<div class="container">
+  <h3>Hi <%= current_student.name %>, here are your classes.</h3>
+
+  <% if current_student.courses.size == 0 %>
+    <div class='well'>
+      <h1>Looks like you need to add some courses</h1>
+    </div>
+  <% else %>
+    <table class="table table-bordered table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Professor</th>
+        <th>Building</th>
+        <th>Room</th>
+      </tr>
+
+    <% current_student.courses.each do |course| %>
+      <tr>
+        <td><%= course_title %></td>
+        <td><%= course.professor %></td>
+        <td><%= course.building %></td>
+        <td><%= course.room %></td>
+        <td class="btn-info-small"><%= link_to 'View', course %></td>
+      </tr>
+    <% end %>
+  <% end %>
+
+  </table>
+</div>
