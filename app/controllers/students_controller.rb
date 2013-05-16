@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   skip_before_filter :require_student, :only =>[:new, :create]
-  before_filter :require_admin, :except =>[:index, :edit, :update, :destroy, :new, :create]
+
 
   # GET /students
   # GET /students.json
