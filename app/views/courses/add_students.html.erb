@@ -1,0 +1,30 @@
+
+<h1>Add Students</h1>
+
+<table class-"table table-bordered table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Uni</th>
+  </tr>
+
+
+<%= form_for(@course) do |f| %>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.uni %></td>
+    <td>
+      <%= f.label "add to class" %>
+      <%= f.check_box :student_ids, {}, student.uni %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<div class="actions">
+  <%= f.submit :class => 'btn btn-success' %>
+</div>
+<% end %>
+
+
