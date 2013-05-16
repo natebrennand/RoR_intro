@@ -9,7 +9,8 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
 
 1.  Pull Request
     * I couldn't get access to sierrasoleil/RoRclass
-    * [Made pull request against my own repo](https://github.com/nsb2142/RoR_intro/pull/1)
+    * [Made a pull request against my own repo](https://github.com/nsb2142/RoR_intro/pull/1)
+    * [Made a pull request to Emily's Courzilla](https://github.com/ColumbiaRails/courszilla/pull/1)
 2.  User Roles
     * Missing functionality
     * Filter works
@@ -20,7 +21,8 @@ My code for the introduction to Ruby on Rails, taught by Emily Stolfo at Columbi
     * signup/login options only visible when logged out
     * home/logout/current user only visible when logged in
 4.  Dashboard
-    * Not completed
+    * Completed 
+    * crippled by lack of #2
 
 #### Option Features
 ---
