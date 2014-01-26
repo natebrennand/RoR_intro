@@ -9,6 +9,7 @@ class Student
   field :role, type: Boolean, default: ->{ false }     # False : student, True : admin
   has_and_belongs_to_many :courses
   validates_uniqueness_of :uni
+  validates_presence of :email
   attr_accessible :name, :uni, :email
 
 end

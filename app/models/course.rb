@@ -14,4 +14,5 @@ class Course
 
   field :_id, type: String, default: ->{ course_title }
   validates_uniqueness_of :call_number
+  validates_presence_of :course_title
 end
